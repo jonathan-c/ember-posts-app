@@ -11,5 +11,6 @@ Todos.TodoController = Ember.ObjectController.extend({
 			model.save();
 			return value;
 		}
+		// What's property?
 	}.property('model.isCompleted')
 });
