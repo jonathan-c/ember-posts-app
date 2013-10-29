@@ -8,10 +8,14 @@ Todos.TodoController = Ember.ObjectController.extend({
 			if (Ember.isEmpty(this.get('model.title'))) {
 				this.send('removeTodo');
 			} else {	
-				// it executes this line but it doesn't save
 				this.set('model.title', e);
 				this.get('model').save();
 			}
+		},
+		removeTodo: function () {
+			var todo = this.get('model');
+			todo.deleteRecord();
+			todo.save();
 		}
 	},
 	isCompleted: function(key, value){
